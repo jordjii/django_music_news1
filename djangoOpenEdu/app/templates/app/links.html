@@ -1,0 +1,22 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+
+<head>
+    <title>Ссылки</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="div-links-a">
+        <p><a href="https://www.billboard.com/" target="_blank"> <img src="{% static 'app/content/billboard.png' %}" alt="Logo 1" /> - Billboard</p></a>
+        <p><a href="https://www.classicalmusicnews.ru/" target="_blank"> <img src="{% static 'app/content/note-logo.png' %}" alt="Logo 1" /> - Classical Music News</p></a>
+        <p><a href="https://www.beatstars.com/" target="_blank"> <img src="{% static 'app/content/beatstars-ico.svg' %}" alt="Logo 1" /> - Beatstars</p></a>
+    </div>
+</body>
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34601.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "djangoOpenEdu", "djangoOpenEdu\djangoOpenEdu.pyproj", "{D9CB5C75-776A-4CBE-927F-8F1C9A8E51CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9CB5C75-776A-4CBE-927F-8F1C9A8E51CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9CB5C75-776A-4CBE-927F-8F1C9A8E51CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9CB5C75-776A-4CBE-927F-8F1C9A8E51CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9CB5C75-776A-4CBE-927F-8F1C9A8E51CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E445D62-2577-4D69-9B2A-7132B8510571}
+	EndGlobalSection
+EndGlobal

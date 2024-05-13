@@ -1,0 +1,99 @@
+{% extends "app/layout.html" %}
+{% block content %}
+{% if form != None %}
+
+<style>
+    .submit-button-poll {
+        background-color: #FFF; /* Цвет фона кнопки */
+        color: #333; /* Цвет текста на кнопке */
+        padding: 10px 20px; /* Поля внутри кнопки */
+        border: none; /* Убираем границу */
+        cursor: pointer; /* Изменяем вид курсора */
+    }
+    
+    .submit-button-poll:hover {
+        background-color: #FFA07A; /* Новый цвет фона при наведении */
+    }
+
+    .submit-button-poll:focus {
+        background-color: #FA8072; /* Новый цвет фона при фокусе */
+    }
+
+     label {
+        display: block; /* Размещаем label на новой строке */
+        font-size: 16px; /* Размер шрифта */
+        color: #333; /* Цвет текста */
+        margin-bottom: 5px; /* Отступ снизу */
+    }
+
+    /* Стили для полей ввода */
+    input[type="text"] {
+        padding: 5px; /* Внутренние отступы */
+        width: 100%; /* Ширина поля ввода */
+        border: 1px solid #999; /* Граница поля ввода */
+        border-radius: 5px; /* Скругление углов */
+    }
+    input[type="text"]:focus {
+        background-color: #f7cfba;
+    }
+
+
+
+
+</style>
+<div >
+    <br>
+    <h2>Пройдите опрос и помогите стать нам лучше!</h2>
+    <br>
+    <div >
+        <form method="post">
+            {% csrf_token %}
+            <label for="{{form.genre.id_for_label}}">{{form.genre.label}}:</label>
+            {{form.genre}}<br><br>
+            <label for="{{form.faveartist.id_for_label}}">{{form.faveartist.label}}:</label>
+            {{form.faveartist}}<br><br>
+            <label for="{{form.where.id_for_label}}">{{form.where.label}}:</label>
+            {{form.where}}<br><br>
+            <label for="{{form.important.id_for_label}}">{{form.important.label}}:</label>
+            {{form.important}}<br><br>
+            <label for="{{form.memoryalbum.id_for_label}}">{{form.memoryalbum.label}}:</label>
+            {{form.memoryalbum}}<br><br>
+            <label for="{{form.notice.id_for_label}}">{{form.notice.label}}</label>
+            {{form.notice}}<br><br>
+
+            <input class="submit-button-poll" type="submit" value="Отправить">
+        </form>
+    </div>
+</div>
+<script>
+    const submitButton = document.querySelector('.submit-button-poll');
+
+    // Изменение цвета текста на кнопке при наведении мыши
+    submitButton.addEventListener('mouseenter', function () {
+        this.style.color = '#000'; // Изменение цвета текста при наведении
+        this.style.backgroundColor = '#fff'; // Изменение цвета текста при наведении
+    });
+
+    submitButton.addEventListener('mouseleave', function () {
+        this.style.color = '#fff'; // Возвращение исходного цвета текста при уходе курсора
+        this.style.backgroundColor = '#000'; // Возвращение исходного цвета текста при уходе курсора
+    });
+</script>
+
+{% else %}
+<br>
+<h2>Благодарим за предоставленную информацию!</h2>
+<h3>Вы сообщили следующее:</h3>
+<ul>
+    <li><span>Жанр:</span><br>{{ data.genre }}</li><br>
+    <li><span>Любимые исполнители:</span><br>{{ data.faveartist }}</li><br>
+    <li><span>Вы предпочитаете слушать музыку:</span><br>{{ data.where }}</li><br>
+    <li><span>Что для вас важнее в музыке:</span><br>{{ data.important }}</li><br>
+    <li><span>Песня, с которой связаны самые яркие музыкальные воспоминания:</span><br>{{ data.memoryalbum }}</li><br>
+    <li>
+        <span>Получить новости сайта на e-mail:</span>
+        <br>{{ data.notice }}
+    </li><br>
+</ul>
+{% endif %}
+{% endblock %}
